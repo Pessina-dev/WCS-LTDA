@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=PT+Serif:wght@700&display=swap');
+
+/*VARIÁVEIS*/
+:root{
+    --backgroundcollor: #EAEAEA;
+    --primarycollor: #3C4048;
+    --secondarycollor: #B2B2B2;
+}
+
+/*GLOBAL*/
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', serif;
+}
+
+/*MENU*/
+nav {
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+nav #logo {
+    padding: 1vh 0 1vh 1vh;
+    height: 8vh;
+    width: auto;
+    background-color: var(--primarycollor);
+}
+
+nav #menu {
+    background-color: var(--primarycollor);
+    width: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav #menu #menu-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav #menu #menu-list li a{
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav #menu #menu-list li a:after{
+    content: "";
+    display: flex;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondarycollor);
+    transition: 0.5s;
+}
+
+nav #menu #menu-list li a:hover:after{
+    width: 100%;
+}
+
+nav #menu #burger {
+    display: none;
+}
+/*FIM MENU*/
+
+header, main{
+    font-size: 1.1rem;
+}
+
+main{
+    background-color: var(--backgroundcollor);
+}
+
+section{
+    padding-top: 15vh;
+    min-height: 85vh;
+}
+
+h1{
+    font-family: 'Rockwell', 'PT Serif', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0 5vw
+}
+
+h2{
+    font-size: 1.25rem;
+    padding-bottom: 1.5rem;
+}
+
+.logo{
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+#inicio{
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding-top: 30vh;
+}
+
+
+
+#texto-historia{
+    text-indent: 2rem;
+    padding: 0 15vw;
+    text-align: justify;
+    hyphens: auto;
+}
+#imagem-historia{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0 1rem 0;
+    overflow: hidden;
+}
+#imagem-historia img{
+    object-fit: cover;
+}
+
+
+/*CONTATO*/
+#lista-icones{
+    list-style: none;
+    height: 15vh;
+    display: flex;
+    width: max-content;
+    gap: 5rem;
+    margin: auto;
+    align-items: center;
+}
+.icones{
+    display: flex;
+    text-decoration: none;
+    color: var(--primarycollor);
+    font-size: 3rem;
+    gap: 1rem;
+}
+.icones:hover{
+    color: var(--secondarycollor);
+    transition: 0.3s;
+}
+.icones span{
+    font-size: 1.5rem;
+    align-self: center;
+}
+/*FIM CONTATO*/
+
+#divmapa{
+    padding-bottom: 10vh;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+footer{
+    padding: 1.2rem 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    background-color: var(--primarycollor);
+    color: var(--secondarycollor);
+}
+
+
+/*RESPONSIVIDADE*/
+@media (max-width: 767px){
+    h1, h2{
+        padding-left: 0;
+        text-align: center;
+    }
+
+    nav #menu {
+        justify-content: flex-end;
+    }
+
+    nav #menu #menu-list {
+        position: fixed;
+        display: grid;
+        left: 0;
+        top: 10vh;
+        height: 0px;
+        width: 100vw;
+        background-color: var(--primarycollor);
+        text-align: center;
+        align-items: center;
+        transition: 0.5s;
+        z-index: 1;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    nav #menu #menu-list.mostrar-menu {
+        height: 35vh;
+        visibility: visible;
+    }
+
+    nav #menu #burger {
+        display: block;
+        width: 30px;
+        margin-right: 1rem;
+    }
+
+    nav #menu #burger div,
+    nav #menu #burger:after,
+    nav #menu #burger:before {
+        background: var(--secondarycollor);
+        content: "";
+        display: block;
+        height: 4px;
+        border-radius: 2px;
+        margin: 5px 0;
+        transition: 0.5s;
+    }
+
+    nav #menu #burger.fechar:before {
+        transform: translateY(8.7px) rotate(135deg);
+    }
+
+    nav #menu #burger.fechar:after {
+        transform: translateY(-8.7px) rotate(-135deg);
+    }
+
+    nav #menu #burger.fechar div {
+        transform: scale(0);
+    }
+
+    #texto-historia{
+        padding: 0 2rem;
+    }
+    
+    #imagem-historia{
+        height: 60vh;
+        width: 90vw;
+        margin: auto;
+    }
+
+    #contato{
+        min-height: 30vh;
+    }
+
+    #lista-icones{
+        flex-direction: column;
+        height: auto;
+        gap: 1.5rem;
+    }
+
+    .icones{
+        font-size: 2.5rem;
+    }
+
+    .icones span{
+        font-size: 1.3rem;
+    }
+
+    #divmapa{
+        margin: 0 3vw;
+    }
+}
+
+/*DISPOSITIVOS IOS*/
+@supports (-webkit-touch-callout: none){
+    /*nav #logo {
+        width: 16.6vh;
+    }*/
+    #texto-historia{
+        -webkit-hyphens: auto;
+    }
+}
