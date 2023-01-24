@@ -85,23 +85,26 @@ main{
 section{
     padding-top: 15vh;
     min-height: 85vh;
+    overflow-x: hidden;
 }
 
 h1{
     font-family: 'Rockwell', 'PT Serif', serif;
     font-size: 2.5rem;
     font-weight: 600;
-    margin: 0 5vw
+    margin: 0 5vw;
+    text-align: center;
 }
 
 h2{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
     padding-bottom: 1.5rem;
+    text-align: center;
 }
 
 .logo{
-    width: 80%;
+    width: 25%;
     margin: auto;
     display: block;
 }
@@ -114,24 +117,30 @@ h2{
     padding-top: 30vh;
 }
 
-
+#historia>div{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 3rem;
+    gap: 2rem;
+}
 
 #texto-historia{
     text-indent: 2rem;
-    padding: 0 15vw;
     text-align: justify;
     hyphens: auto;
+    margin: auto 0;
 }
+
 #imagem-historia{
     display: flex;
     justify-content: center;
-    padding: 2rem 0 1rem 0;
-    overflow: hidden;
-}
-#imagem-historia img{
-    object-fit: cover;
 }
 
+#imagem-historia img{
+    object-fit: cover;
+    height: 50vh;
+    width: 50vw;
+}
 
 /*CONTATO*/
 #lista-icones{
@@ -161,10 +170,13 @@ h2{
 /*FIM CONTATO*/
 
 #divmapa{
-    padding-bottom: 10vh;
     display: flex;
     align-self: center;
     justify-content: center;
+}
+
+section:last-of-type{
+    padding-bottom: 10vh;
 }
 
 footer{
@@ -179,10 +191,10 @@ footer{
 
 
 /*RESPONSIVIDADE*/
+/*MOBILE*/
 @media (max-width: 767px){
     h1, h2{
         padding-left: 0;
-        text-align: center;
     }
 
     nav #menu {
@@ -243,15 +255,27 @@ footer{
     #inicio{
         min-height: 60vh;
     }
-
+    
+    #historia>div{
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0;
+    }
+    
     #texto-historia{
-        padding: 0 2rem;
+        margin: 0 2rem;
     }
     
     #imagem-historia{
         height: 60vh;
         width: 90vw;
+        overflow: hidden;
         margin: auto;
+    }
+
+    #imagem-historia img{
+        width: auto;
+        height: auto;
     }
 
     #contato{
@@ -277,6 +301,19 @@ footer{
     #divmapa{
         margin: 0 3vw;
     }
+}
+
+/*MONITORES PEQUENOS*/
+@media (min-width: 768px) and (max-width:1023px){
+    .logo{
+        width: 50%;
+    }
+    
+    #lista-icones{
+        flex-direction: column;
+        height: auto;
+        gap: 1.5rem;
+    } 
 }
 
 /*DISPOSITIVOS IOS*/
