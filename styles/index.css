@@ -149,7 +149,6 @@ h2{
     display: flex;
     width: max-content;
     gap: 5rem;
-    margin: auto;
     align-items: center;
 }
 .icones{
@@ -173,6 +172,12 @@ h2{
     display: flex;
     align-self: center;
     justify-content: center;
+}
+
+#mapa{
+    width: 90vw;
+    height: 70vh;
+    border: 0;
 }
 
 section:last-of-type{
@@ -292,6 +297,7 @@ footer{
         gap: 1.5rem; 
         word-break: break-all;
         max-width: 80vw;
+        margin: auto;
     }
 
     .icones{
@@ -300,10 +306,6 @@ footer{
 
     .icones span{
         font-size: 1.3rem;
-    }
-
-    #divmapa{
-        margin: 0 3vw;
     }
 }
 
@@ -318,6 +320,15 @@ footer{
         height: auto;
         gap: 1.5rem;
     } 
+}
+
+@media (min-width: 768px){
+    section:not(:first-of-type){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /*DISPOSITIVOS IOS*/
